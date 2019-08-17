@@ -1,17 +1,14 @@
 package views
 
-import "go.mongodb.org/mongo-driver/bson/primitive"
-
 // basic response
 type Response struct {
-	Success bool
+	Code    int
 	Error   string
 	Data    interface{}
 }
 
 // user profile
 type Profile struct {
-	Id               primitive.ObjectID
 	Username         string
 	Nickname         string
 	Introduction     string
