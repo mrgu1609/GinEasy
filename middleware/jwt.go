@@ -1,9 +1,9 @@
 package middleware
 
 import (
-	"gineasy/conf"
+	"OnlinePhotoAlbum/conf"
 	//jwt "OnlinePhotoAlbum/test"
-	"gineasy/views"
+	"OnlinePhotoAlbum/views"
 	"github.com/appleboy/gin-jwt/v2"
 	"github.com/gin-gonic/gin"
 	"log"
@@ -30,5 +30,5 @@ func GetToken() *jwt.GinJWTMiddleware {
 
 //return login failed message
 func unauthorized(c *gin.Context, code int, message string) {
-	c.JSON(200, views.ErrorRes("jwt鉴权错误："+message+"，请尝试重新登录"))
+	c.JSON(200, views.ErrorResponse("jwt鉴权错误："+message+"，请尝试重新登录"))
 }

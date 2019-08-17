@@ -1,11 +1,11 @@
 package main
 
 import (
-	"gineasy/conf"
-	"gineasy/routers"
+	"OnlinePhotoAlbum/conf"
+	"OnlinePhotoAlbum/routers"
 )
 
 func main() {
 	r := routers.InitRouter()
-	_ = r.Run(conf.AppPort)
+	_ = r.Run(conf.Port)
 }

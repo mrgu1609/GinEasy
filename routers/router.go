@@ -1,8 +1,10 @@
 package routers
 
 import (
-	api "gineasy/controllers/v1"
-	"gineasy/middleware"
+	"OnlinePhotoAlbum/conf"
+	api "OnlinePhotoAlbum/controllers/v1"
+	"OnlinePhotoAlbum/middleware"
+	"OnlinePhotoAlbum/views"
 	"github.com/gin-gonic/gin"
 )
 
@@ -10,7 +12,7 @@ func InitRouter() *gin.Engine {
 	r := gin.Default()
 
 	//set run mode
-	//gin.SetMode()
+	gin.SetMode(conf.GinMode)
 
 	//cors
 	r.Use(middleware.Cors())
@@ -32,5 +34,5 @@ func InitRouter() *gin.Engine {
 }
 
 func pingHandler(c *gin.Context)  {
-	c.JSON(200,gin.H{"message":"pong"})
+	c.JSON(200,views.SuccessResponse("pong"))
 }
